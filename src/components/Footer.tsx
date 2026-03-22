@@ -14,20 +14,19 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-saferaho-blue rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm font-display">S</span>
-              </div>
-              <span className="font-display font-semibold text-xl text-white">
-                {siteConfig.name}
-              </span>
+            <Link href="/" className="inline-flex items-center mb-4">
+              <img
+                src="/logo.svg"
+                alt={`${siteConfig.name} logo`}
+                className="h-10 w-auto"
+              />
             </Link>
             <p className="text-white/70 text-sm leading-relaxed mb-6">
               {siteConfig.description}. Simple, honest protection for your family, health, vehicle, and travels.
             </p>
             <div className="space-y-3">
               <a
-                href={`tel:${siteConfig.contact.phone}`}
+                href={`tel:${siteConfig.contact.phoneHref}`}
                 className="flex items-center gap-3 text-sm text-white/80 hover:text-saferaho-blue transition-colors"
               >
                 <Phone className="w-4 h-4" />

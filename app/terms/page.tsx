@@ -12,7 +12,7 @@ export default function Page() {
           Quotes, benefits, and claim outcomes are subject to the insurer&apos;s final approval and the applicable product documents.
         </p>
         <p className="text-saferaho-gray leading-relaxed">
-          By using this site, you agree to contact us for personalised advice before making a purchase decision. For support, reach us at <a className="text-saferaho-blue" href={`tel:${siteConfig.contact.phone}`}>{siteConfig.contact.phone}</a>.
+          By using this site, you agree to contact us for personalised advice before making a purchase decision. For support, reach us at <a className="text-saferaho-blue" href={`tel:${siteConfig.contact.phoneHref}`}>{siteConfig.contact.phone}</a>.
         </p>
       </div>
     </main>

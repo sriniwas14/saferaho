@@ -11,7 +11,7 @@ const config = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         saferaho: {
-          blue: "#00BFFF",
+          blue: "#4169E1",
           navy: "#0B1C3B",
           cloud: "#F6F8FC",
           gray: "#5A6B85",

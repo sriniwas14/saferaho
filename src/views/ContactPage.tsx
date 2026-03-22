@@ -106,7 +106,7 @@ export function ContactPage() {
 
               <div className="space-y-4">
                 <a
-                  href={`tel:${siteConfig.contact.phone}`}
+                  href={`tel:${siteConfig.contact.phoneHref}`}
                   className="info-card flex items-center gap-4 p-5 bg-white rounded-[18px] card-shadow border border-saferaho-navy/5 hover:-translate-y-0.5 hover:card-shadow-hover transition-all group"
                 >
                   <div className="w-12 h-12 bg-saferaho-blue/10 rounded-xl flex items-center justify-center group-hover:bg-saferaho-blue/20 transition-colors">
