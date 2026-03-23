@@ -104,7 +104,7 @@ export function CTASection() {
             {/* Contact Details */}
             <div ref={contactRef} className="space-y-4">
               <a
-                href={`tel:${siteConfig.contact.phoneHref}`}
+                href="#"
                 className="contact-item flex items-center gap-4 text-white/80 hover:text-saferaho-blue transition-colors group"
               >
                 <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center group-hover:bg-saferaho-blue/20 transition-colors">
@@ -114,7 +114,7 @@ export function CTASection() {
               </a>
 
               <a
-                href={`mailto:${siteConfig.contact.email}`}
+                href="#"
                 className="contact-item flex items-center gap-4 text-white/80 hover:text-saferaho-blue transition-colors group"
               >
                 <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center group-hover:bg-saferaho-blue/20 transition-colors">
@@ -124,9 +124,7 @@ export function CTASection() {
               </a>
 
               <a
-                href={siteConfig.social.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#"
                 className="contact-item flex items-center gap-4 text-white/80 hover:text-saferaho-blue transition-colors group"
               >
                 <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center group-hover:bg-saferaho-blue/20 transition-colors">

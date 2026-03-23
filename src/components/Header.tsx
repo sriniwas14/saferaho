@@ -37,7 +37,7 @@ export function Header() {
       <div className="w-full px-6 md:px-[6vw]">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
+          <Link href="#" className="flex items-center">
             <img
               src="/logo.png"
               alt={`${siteConfig.name} logo`}
@@ -76,7 +76,7 @@ export function Header() {
                         {link.children.map((child) => (
                           <Link
                             key={child.href}
-                            href={child.href}
+                            href="#"
                             className="block px-4 py-2.5 text-sm text-saferaho-navy hover:bg-saferaho-cloud hover:text-saferaho-blue transition-colors"
                           >
                             {child.label}
@@ -87,7 +87,7 @@ export function Header() {
                   </>
                 ) : (
                   <Link
-                    href={link.href}
+                    href="#"
                     className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                       isActive(link.href)
                         ? "text-saferaho-blue"
@@ -104,16 +104,14 @@ export function Header() {
           {/* CTA Button */}
           <div className="hidden lg:flex items-center gap-4">
             <a
-              href={`tel:${siteConfig.contact.phoneHref}`}
+              href="#"
               className="flex items-center gap-2 text-sm text-saferaho-navy hover:text-saferaho-blue transition-colors"
             >
               <Phone className="w-4 h-4" />
               <span className="font-medium">{siteConfig.contact.phone}</span>
             </a>
             <a
-              href={siteConfig.social.whatsapp}
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#"
               className="btn-primary text-sm"
             >
               Get a Quote
@@ -148,7 +146,7 @@ export function Header() {
                     {link.children.map((child) => (
                       <Link
                         key={child.href}
-                        href={child.href}
+                        href="#"
                         className="block px-4 py-2 text-sm text-saferaho-navy hover:text-saferaho-blue pl-8"
                       >
                         {child.label}
@@ -157,7 +155,7 @@ export function Header() {
                   </div>
                 ) : (
                   <Link
-                    href={link.href}
+                    href="#"
                     className={`block px-4 py-2 text-sm font-medium rounded-lg ${
                       isActive(link.href)
                         ? "text-saferaho-blue bg-saferaho-cloud"
@@ -171,16 +169,14 @@ export function Header() {
             ))}
             <div className="pt-4 border-t border-saferaho-navy/8 space-y-3">
               <a
-                href={`tel:${siteConfig.contact.phoneHref}`}
+                href="#"
                 className="flex items-center gap-2 px-4 py-2 text-sm text-saferaho-navy"
               >
                 <Phone className="w-4 h-4" />
                 <span>{siteConfig.contact.phone}</span>
               </a>
               <a
-                href={siteConfig.social.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#"
                 className="btn-primary text-sm block text-center mx-4"
               >
                 Get a Quote

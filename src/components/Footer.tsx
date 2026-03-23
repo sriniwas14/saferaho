@@ -1,12 +1,14 @@
-import Link from 'next/link';
-import { Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
-import { siteConfig, navLinks } from '@/data/site';
+import Link from "next/link";
+import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
+import { siteConfig, navLinks } from "@/data/site";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
-  const insuranceLinks = navLinks.find(l => l.label === 'Insurance')?.children || [];
-  const investmentLinks = navLinks.find(l => l.label === 'Investments')?.children || [];
+  const insuranceLinks =
+    navLinks.find((l) => l.label === "Insurance")?.children || [];
+  const investmentLinks =
+    navLinks.find((l) => l.label === "Investments")?.children || [];
 
   return (
     <footer className="bg-saferaho-navy text-white">
@@ -14,35 +16,34 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <Link href="/" className="inline-flex items-center mb-4">
+            <Link href="#" className="inline-flex items-center mb-4">
               <img
-                src="/logo.svg"
+                src="/logo.png"
                 alt={`${siteConfig.name} logo`}
                 className="h-10 w-auto"
               />
             </Link>
             <p className="text-white/70 text-sm leading-relaxed mb-6">
-              {siteConfig.description}. Simple, honest protection for your family, health, vehicle, and travels.
+              {siteConfig.description}. Simple, honest protection for your
+              family, health, vehicle, and travels.
             </p>
             <div className="space-y-3">
               <a
-                href={`tel:${siteConfig.contact.phoneHref}`}
+                href="#"
                 className="flex items-center gap-3 text-sm text-white/80 hover:text-saferaho-blue transition-colors"
               >
                 <Phone className="w-4 h-4" />
                 <span>{siteConfig.contact.phone}</span>
               </a>
               <a
-                href={`mailto:${siteConfig.contact.email}`}
+                href="#"
                 className="flex items-center gap-3 text-sm text-white/80 hover:text-saferaho-blue transition-colors"
               >
                 <Mail className="w-4 h-4" />
                 <span>{siteConfig.contact.email}</span>
               </a>
               <a
-                href={siteConfig.social.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#"
                 className="flex items-center gap-3 text-sm text-white/80 hover:text-saferaho-blue transition-colors"
               >
                 <MessageCircle className="w-4 h-4" />
@@ -60,7 +61,7 @@ export function Footer() {
               {insuranceLinks.map((link) => (
                 <li key={link.href}>
                   <Link
-                    href={link.href}
+                    href="#"
                     className="text-sm text-white/80 hover:text-saferaho-blue transition-colors"
                   >
                     {link.label}
@@ -79,7 +80,7 @@ export function Footer() {
               {investmentLinks.map((link) => (
                 <li key={link.href}>
                   <Link
-                    href={link.href}
+                    href="#"
                     className="text-sm text-white/80 hover:text-saferaho-blue transition-colors"
                   >
                     {link.label}
@@ -103,17 +104,26 @@ export function Footer() {
             </h3>
             <ul className="space-y-2.5">
               <li>
-                <Link href="/tools" className="text-sm text-white/80 hover:text-saferaho-blue transition-colors">
+                <Link
+                  href="#"
+                  className="text-sm text-white/80 hover:text-saferaho-blue transition-colors"
+                >
                   SIP Calculator
                 </Link>
               </li>
               <li>
-                <Link href="/tools" className="text-sm text-white/80 hover:text-saferaho-blue transition-colors">
+                <Link
+                  href="#"
+                  className="text-sm text-white/80 hover:text-saferaho-blue transition-colors"
+                >
                   EMI Calculator
                 </Link>
               </li>
               <li>
-                <Link href="/tools" className="text-sm text-white/80 hover:text-saferaho-blue transition-colors">
+                <Link
+                  href="#"
+                  className="text-sm text-white/80 hover:text-saferaho-blue transition-colors"
+                >
                   Coverage Calculator
                 </Link>
               </li>
@@ -127,10 +137,16 @@ export function Footer() {
             © {currentYear} {siteConfig.name}. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <Link href="/privacy" className="text-sm text-white/50 hover:text-white transition-colors">
+            <Link
+              href="#"
+              className="text-sm text-white/50 hover:text-white transition-colors"
+            >
               Privacy Policy
             </Link>
-            <Link href="/terms" className="text-sm text-white/50 hover:text-white transition-colors">
+            <Link
+              href="#"
+              className="text-sm text-white/50 hover:text-white transition-colors"
+            >
               Terms of Service
             </Link>
           </div>

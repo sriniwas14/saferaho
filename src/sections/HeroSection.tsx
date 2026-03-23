@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { MessageCircle, Check, Shield, Heart } from 'lucide-react';
-import { siteConfig } from '@/data/site';
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -134,17 +134,13 @@ export function HeroSection() {
             {/* CTA Buttons */}
             <div className="animate-item flex flex-col sm:flex-row gap-3 mb-4">
               <a
-                href={siteConfig.social.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#"
                 className="btn-primary text-center"
               >
                 Get your free plan
               </a>
               <a
-                href={siteConfig.social.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#"
                 className="btn-secondary text-center flex items-center justify-center gap-2"
               >
                 <MessageCircle className="w-4 h-4" />

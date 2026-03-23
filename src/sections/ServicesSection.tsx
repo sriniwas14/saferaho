@@ -92,7 +92,7 @@ export function ServicesSection() {
             return (
               <Link
                 key={card.id}
-                href={`/${card.id}-insurance`}
+                href="#"
                 className="service-card group bg-white rounded-[22px] p-6 card-shadow border border-saferaho-navy/5 hover:-translate-y-1.5 hover:card-shadow-hover transition-all duration-300"
               >
                 {/* Icon */}

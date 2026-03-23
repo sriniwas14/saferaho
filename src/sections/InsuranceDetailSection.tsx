@@ -3,7 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight, MessageCircle, Check, Plus } from 'lucide-react';
 import type { InsurancePlan } from '@/data/insurance';
-import { siteConfig } from '@/data/site';
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -205,18 +205,14 @@ export function InsuranceDetailSection({ plan, imagePosition = 'right' }: Insura
               {/* CTAs */}
               <div className="flex flex-col sm:flex-row gap-3">
                 <a
-                  href={siteConfig.social.whatsapp}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="#"
                   className="btn-primary flex items-center justify-center gap-2"
                 >
                   {plan.cta}
                   <ArrowRight className="w-4 h-4" />
                 </a>
                 <a
-                  href={siteConfig.social.whatsapp}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="#"
                   className="btn-secondary flex items-center justify-center gap-2"
                 >
                   <MessageCircle className="w-4 h-4" />

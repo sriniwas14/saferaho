@@ -3,7 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight, TrendingUp, GraduationCap } from 'lucide-react';
 import { investmentCards } from '@/data/investments';
-import { siteConfig } from '@/data/site';
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -136,9 +136,7 @@ export function InvestmentsSection() {
                   </p>
 
                   <a
-                    href={siteConfig.social.whatsapp}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="#"
                     className="inline-flex items-center gap-2 text-sm font-medium text-saferaho-blue hover:gap-3 transition-all"
                   >
                     {card.cta}
