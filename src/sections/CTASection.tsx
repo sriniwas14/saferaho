@@ -32,7 +32,7 @@ export function CTASection() {
           ease: 'power2.out',
           scrollTrigger: {
             trigger: section,
-            start: 'top 75%',
+            start: 'top 85%',
             toggleActions: 'play none none reverse',
           }
         }
@@ -49,7 +49,7 @@ export function CTASection() {
           ease: 'power2.out',
           scrollTrigger: {
             trigger: section,
-            start: 'top 72%',
+            start: 'top 80%',
             toggleActions: 'play none none reverse',
           }
         }
@@ -104,7 +104,7 @@ export function CTASection() {
             {/* Contact Details */}
             <div ref={contactRef} className="space-y-4">
               <a
-                href="#"
+                href={`tel:${siteConfig.contact.phoneHref}`}
                 className="contact-item flex items-center gap-4 text-white/80 hover:text-saferaho-blue transition-colors group"
               >
                 <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center group-hover:bg-saferaho-blue/20 transition-colors">
@@ -114,7 +114,7 @@ export function CTASection() {
               </a>
 
               <a
-                href="#"
+                href={`mailto:${siteConfig.contact.email}`}
                 className="contact-item flex items-center gap-4 text-white/80 hover:text-saferaho-blue transition-colors group"
               >
                 <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center group-hover:bg-saferaho-blue/20 transition-colors">
@@ -124,7 +124,7 @@ export function CTASection() {
               </a>
 
               <a
-                href="#"
+                href={siteConfig.social.whatsapp}
                 className="contact-item flex items-center gap-4 text-white/80 hover:text-saferaho-blue transition-colors group"
               >
                 <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center group-hover:bg-saferaho-blue/20 transition-colors">

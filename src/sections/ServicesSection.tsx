@@ -37,7 +37,7 @@ export function ServicesSection() {
           ease: 'power2.out',
           scrollTrigger: {
             trigger: title,
-            start: 'top 80%',
+            start: 'top 85%',
             toggleActions: 'play none none reverse',
           }
         }
@@ -56,7 +56,7 @@ export function ServicesSection() {
           ease: 'power2.out',
           scrollTrigger: {
             trigger: cards,
-            start: 'top 75%',
+            start: 'top 85%',
             toggleActions: 'play none none reverse',
           }
         }
@@ -92,7 +92,7 @@ export function ServicesSection() {
             return (
               <Link
                 key={card.id}
-                href="#"
+                href={card.href}
                 className="service-card group bg-white rounded-[22px] p-6 card-shadow border border-saferaho-navy/5 hover:-translate-y-1.5 hover:card-shadow-hover transition-all duration-300"
               >
                 {/* Icon */}

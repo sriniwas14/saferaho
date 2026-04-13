@@ -37,7 +37,7 @@ export function Header() {
       <div className="w-full px-6 md:px-[6vw]">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link href="#" className="flex items-center">
+          <Link href="/" className="flex items-center">
             <img
               src="/logo.png"
               alt={`${siteConfig.name} logo`}
@@ -50,7 +50,7 @@ export function Header() {
             {navLinks.map((link) => (
               <div
                 key={link.label}
-                className="relative"
+                className="relative -m-2"
                 onMouseEnter={() =>
                   link.children && setOpenDropdown(link.label)
                 }
@@ -72,11 +72,11 @@ export function Header() {
                       />
                     </button>
                     {openDropdown === link.label && (
-                      <div className="absolute top-full left-0 mt-1 w-56 bg-white rounded-xl shadow-lg border border-saferaho-navy/8 py-2 animate-in fade-in slide-in-from-top-2 duration-200">
+                      <div className="absolute top-full left-0 mt-0 w-56 bg-white rounded-xl shadow-lg border border-saferaho-navy/8 py-2 animate-in fade-in slide-in-from-top-2 duration-200">
                         {link.children.map((child) => (
                           <Link
                             key={child.href}
-                            href="#"
+                            href={child.href}
                             className="block px-4 py-2.5 text-sm text-saferaho-navy hover:bg-saferaho-cloud hover:text-saferaho-blue transition-colors"
                           >
                             {child.label}
@@ -87,7 +87,7 @@ export function Header() {
                   </>
                 ) : (
                   <Link
-                    href="#"
+                    href={link.href}
                     className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                       isActive(link.href)
                         ? "text-saferaho-blue"
@@ -104,18 +104,18 @@ export function Header() {
           {/* CTA Button */}
           <div className="hidden lg:flex items-center gap-4">
             <a
-              href="#"
+              href={`tel:${siteConfig.contact.phoneHref}`}
               className="flex items-center gap-2 text-sm text-saferaho-navy hover:text-saferaho-blue transition-colors"
             >
               <Phone className="w-4 h-4" />
               <span className="font-medium">{siteConfig.contact.phone}</span>
             </a>
-            <a
-              href="#"
+            <Link
+              href="/contact"
               className="btn-primary text-sm"
             >
               Get a Quote
-            </a>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -143,10 +143,10 @@ export function Header() {
                     <span className="block px-4 py-2 text-sm font-medium text-saferaho-gray">
                       {link.label}
                     </span>
-                    {link.children.map((child) => (
-                      <Link
-                        key={child.href}
-                        href="#"
+                      {link.children.map((child) => (
+                        <Link
+                          key={child.href}
+                          href={child.href}
                         className="block px-4 py-2 text-sm text-saferaho-navy hover:text-saferaho-blue pl-8"
                       >
                         {child.label}
@@ -155,7 +155,7 @@ export function Header() {
                   </div>
                 ) : (
                   <Link
-                    href="#"
+                    href={link.href}
                     className={`block px-4 py-2 text-sm font-medium rounded-lg ${
                       isActive(link.href)
                         ? "text-saferaho-blue bg-saferaho-cloud"
@@ -169,18 +169,18 @@ export function Header() {
             ))}
             <div className="pt-4 border-t border-saferaho-navy/8 space-y-3">
               <a
-                href="#"
+                href={`tel:${siteConfig.contact.phoneHref}`}
                 className="flex items-center gap-2 px-4 py-2 text-sm text-saferaho-navy"
               >
                 <Phone className="w-4 h-4" />
                 <span>{siteConfig.contact.phone}</span>
               </a>
-              <a
-                href="#"
+              <Link
+                href="/contact"
                 className="btn-primary text-sm block text-center mx-4"
               >
                 Get a Quote
-              </a>
+              </Link>
             </div>
           </nav>
         </div>

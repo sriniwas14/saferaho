@@ -16,7 +16,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <Link href="#" className="inline-flex items-center mb-4">
+            <Link href="/" className="inline-flex items-center mb-4">
               <img
                 src="/logo.png"
                 alt={`${siteConfig.name} logo`}
@@ -29,21 +29,21 @@ export function Footer() {
             </p>
             <div className="space-y-3">
               <a
-                href="#"
+                href={`tel:${siteConfig.contact.phoneHref}`}
                 className="flex items-center gap-3 text-sm text-white/80 hover:text-saferaho-blue transition-colors"
               >
                 <Phone className="w-4 h-4" />
                 <span>{siteConfig.contact.phone}</span>
               </a>
               <a
-                href="#"
+                href={`mailto:${siteConfig.contact.email}`}
                 className="flex items-center gap-3 text-sm text-white/80 hover:text-saferaho-blue transition-colors"
               >
                 <Mail className="w-4 h-4" />
                 <span>{siteConfig.contact.email}</span>
               </a>
               <a
-                href="#"
+                href={siteConfig.social.whatsapp}
                 className="flex items-center gap-3 text-sm text-white/80 hover:text-saferaho-blue transition-colors"
               >
                 <MessageCircle className="w-4 h-4" />
@@ -61,7 +61,7 @@ export function Footer() {
               {insuranceLinks.map((link) => (
                 <li key={link.href}>
                   <Link
-                    href="#"
+                    href={link.href}
                     className="text-sm text-white/80 hover:text-saferaho-blue transition-colors"
                   >
                     {link.label}
@@ -80,7 +80,7 @@ export function Footer() {
               {investmentLinks.map((link) => (
                 <li key={link.href}>
                   <Link
-                    href="#"
+                    href={link.href}
                     className="text-sm text-white/80 hover:text-saferaho-blue transition-colors"
                   >
                     {link.label}
@@ -105,7 +105,7 @@ export function Footer() {
             <ul className="space-y-2.5">
               <li>
                 <Link
-                  href="#"
+                  href="/tools"
                   className="text-sm text-white/80 hover:text-saferaho-blue transition-colors"
                 >
                   SIP Calculator
@@ -113,7 +113,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="/tools"
                   className="text-sm text-white/80 hover:text-saferaho-blue transition-colors"
                 >
                   EMI Calculator
@@ -121,7 +121,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="/tools"
                   className="text-sm text-white/80 hover:text-saferaho-blue transition-colors"
                 >
                   Coverage Calculator
@@ -138,13 +138,13 @@ export function Footer() {
           </p>
           <div className="flex items-center gap-6">
             <Link
-              href="#"
+              href="/privacy"
               className="text-sm text-white/50 hover:text-white transition-colors"
             >
               Privacy Policy
             </Link>
             <Link
-              href="#"
+              href="/terms"
               className="text-sm text-white/50 hover:text-white transition-colors"
             >
               Terms of Service

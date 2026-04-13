@@ -51,7 +51,7 @@ export function Home() {
     };
 
     // Delay to ensure all ScrollTriggers are created
-    const timer = setTimeout(setupGlobalSnap, 500);
+    const timer = setTimeout(setupGlobalSnap, 150);
 
     return () => {
       clearTimeout(timer);

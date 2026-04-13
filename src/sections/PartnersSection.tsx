@@ -47,7 +47,7 @@ export function PartnersSection() {
           ease: 'power2.out',
           scrollTrigger: {
             trigger: logos,
-            start: 'top 80%',
+            start: 'top 85%',
             toggleActions: 'play none none reverse',
           }
         }

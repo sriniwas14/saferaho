@@ -35,7 +35,7 @@ export function InvestmentsSection() {
           ease: 'power2.out',
           scrollTrigger: {
             trigger: header,
-            start: 'top 80%',
+            start: 'top 85%',
             toggleActions: 'play none none reverse',
           }
         }
@@ -54,7 +54,7 @@ export function InvestmentsSection() {
           ease: 'power2.out',
           scrollTrigger: {
             trigger: cards,
-            start: 'top 75%',
+            start: 'top 85%',
             toggleActions: 'play none none reverse',
           }
         }
@@ -72,7 +72,7 @@ export function InvestmentsSection() {
           ease: 'power2.out',
           scrollTrigger: {
             trigger: cards,
-            start: 'top 70%',
+            start: 'top 80%',
             toggleActions: 'play none none reverse',
           }
         }
@@ -136,7 +136,7 @@ export function InvestmentsSection() {
                   </p>
 
                   <a
-                    href="#"
+                    href={card.href}
                     className="inline-flex items-center gap-2 text-sm font-medium text-saferaho-blue hover:gap-3 transition-all"
                   >
                     {card.cta}

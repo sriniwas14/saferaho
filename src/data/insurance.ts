@@ -78,24 +78,28 @@ export const serviceCards = [
     id: "life",
     title: "Life Insurance",
     description: "Secure your family's future with the right term plan.",
-    cta: "Explore"
+    cta: "Explore",
+    href: "/life-insurance"
   },
   {
     id: "health",
     title: "Health Insurance",
     description: "Cashless hospitalization and clear coverage.",
-    cta: "Explore"
+    cta: "Explore",
+    href: "/health-insurance"
   },
   {
     id: "motor",
     title: "Motor Insurance",
     description: "Own damage + third party, explained simply.",
-    cta: "Explore"
+    cta: "Explore",
+    href: "/motor-insurance"
   },
   {
     id: "travel",
     title: "Travel Insurance",
     description: "Medical + baggage cover that actually works.",
-    cta: "Explore"
+    cta: "Explore",
+    href: "/travel-insurance"
   }
 ];

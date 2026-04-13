@@ -59,6 +59,7 @@ export const investmentCards = [
     title: "Early Retirement Plans",
     description: "Build a corpus that lets you choose when to stop. We help with fund selection, rebalancing, and tax-efficient withdrawals.",
     cta: "Start retirement planning",
+    href: "/early-retirement",
     image: "/images/retirement.jpg"
   },
   {
@@ -66,6 +67,7 @@ export const investmentCards = [
     title: "Child Marriage & Education",
     description: "Goal-based investing for school fees, higher studies, and life's big moments—without dipping into emergency savings.",
     cta: "Plan for your child",
+    href: "/child-education",
     image: "/images/child-education.jpg"
   }
 ];

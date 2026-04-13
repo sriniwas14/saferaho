@@ -37,7 +37,7 @@ export function InsuranceDetailSection({ plan, imagePosition = 'right' }: Insura
           ease: 'power2.out',
           scrollTrigger: {
             trigger: card,
-            start: 'top 80%',
+            start: 'top 85%',
             toggleActions: 'play none none reverse',
           }
         }
@@ -54,7 +54,7 @@ export function InsuranceDetailSection({ plan, imagePosition = 'right' }: Insura
           ease: 'power2.out',
           scrollTrigger: {
             trigger: content,
-            start: 'top 75%',
+            start: 'top 85%',
             toggleActions: 'play none none reverse',
           }
         }
@@ -71,7 +71,7 @@ export function InsuranceDetailSection({ plan, imagePosition = 'right' }: Insura
           ease: 'power2.out',
           scrollTrigger: {
             trigger: content,
-            start: 'top 72%',
+            start: 'top 85%',
             toggleActions: 'play none none reverse',
           }
         }
@@ -89,7 +89,7 @@ export function InsuranceDetailSection({ plan, imagePosition = 'right' }: Insura
           ease: 'power2.out',
           scrollTrigger: {
             trigger: content,
-            start: 'top 68%',
+            start: 'top 80%',
             toggleActions: 'play none none reverse',
           }
         }
@@ -107,7 +107,7 @@ export function InsuranceDetailSection({ plan, imagePosition = 'right' }: Insura
           ease: 'power2.out',
           scrollTrigger: {
             trigger: image,
-            start: 'top 75%',
+            start: 'top 85%',
             toggleActions: 'play none none reverse',
           }
         }
@@ -125,7 +125,7 @@ export function InsuranceDetailSection({ plan, imagePosition = 'right' }: Insura
           ease: 'back.out(1.7)',
           scrollTrigger: {
             trigger: section,
-            start: 'top 70%',
+            start: 'top 80%',
             toggleActions: 'play none none reverse',
           }
         }
@@ -205,14 +205,14 @@ export function InsuranceDetailSection({ plan, imagePosition = 'right' }: Insura
               {/* CTAs */}
               <div className="flex flex-col sm:flex-row gap-3">
                 <a
-                  href="#"
+                  href="/contact"
                   className="btn-primary flex items-center justify-center gap-2"
                 >
                   {plan.cta}
                   <ArrowRight className="w-4 h-4" />
                 </a>
                 <a
-                  href="#"
+                  href="https://wa.me/918860077551"
                   className="btn-secondary flex items-center justify-center gap-2"
                 >
                   <MessageCircle className="w-4 h-4" />

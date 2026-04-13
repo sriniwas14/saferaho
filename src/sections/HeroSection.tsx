@@ -134,13 +134,13 @@ export function HeroSection() {
             {/* CTA Buttons */}
             <div className="animate-item flex flex-col sm:flex-row gap-3 mb-4">
               <a
-                href="#"
+                href="/contact"
                 className="btn-primary text-center"
               >
                 Get your free plan
               </a>
               <a
-                href="#"
+                href="https://wa.me/918860077551"
                 className="btn-secondary text-center flex items-center justify-center gap-2"
               >
                 <MessageCircle className="w-4 h-4" />

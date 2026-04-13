@@ -35,7 +35,7 @@ export function WhySection() {
           ease: 'power2.out',
           scrollTrigger: {
             trigger: title,
-            start: 'top 80%',
+            start: 'top 85%',
             toggleActions: 'play none none reverse',
           }
         }
@@ -53,7 +53,7 @@ export function WhySection() {
           ease: 'power2.out',
           scrollTrigger: {
             trigger: pillars,
-            start: 'top 75%',
+            start: 'top 85%',
             toggleActions: 'play none none reverse',
           }
         }
@@ -71,7 +71,7 @@ export function WhySection() {
           ease: 'back.out(1.7)',
           scrollTrigger: {
             trigger: pillars,
-            start: 'top 72%',
+            start: 'top 80%',
             toggleActions: 'play none none reverse',
           }
         }

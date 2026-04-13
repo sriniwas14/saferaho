@@ -18,7 +18,7 @@ export const navLinks = [
   { label: "Home", href: "/" },
   {
     label: "Insurance",
-    href: "#",
+    href: "/life-insurance",
     children: [
       { label: "Life Insurance", href: "/life-insurance" },
       { label: "Health Insurance", href: "/health-insurance" },
@@ -28,7 +28,7 @@ export const navLinks = [
   },
   {
     label: "Investments",
-    href: "#",
+    href: "/early-retirement",
     children: [
       { label: "Early Retirement", href: "/early-retirement" },
       { label: "Child Education", href: "/child-education" },
@@ -36,7 +36,17 @@ export const navLinks = [
     ],
   },
   { label: "Claims", href: "/claims" },
-  { label: "Tools", href: "/tools" },
+  {
+    label: "Tools",
+    href: "/tools/sip",
+    children: [
+      { label: "SIP Calculator", href: "/tools/sip" },
+      { label: "EMI Calculator", href: "/tools/emi" },
+      { label: "Health Coverage Calculator", href: "/tools/health-coverage" },
+      { label: "Life Coverage Calculator", href: "/tools/life-coverage" },
+      { label: "Inflation Calculator", href: "/tools/inflation" },
+    ],
+  },
   { label: "Contact", href: "/contact" },
 ];
 
