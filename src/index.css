@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&family=Space+Grotesk:wght@500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -6,25 +6,27 @@
 
 @layer base {
   :root {
-    --background: 220 33% 97%;
-    --foreground: 216 60% 14%;
+    --background: 220 20% 98%;
+    --foreground: 215 60% 8%;
     --card: 0 0% 100%;
-    --card-foreground: 216 60% 14%;
+    --card-foreground: 215 60% 8%;
     --popover: 0 0% 100%;
-    --popover-foreground: 216 60% 14%;
-    --primary: 225 73% 57%;
-    --primary-foreground: 216 60% 14%;
-    --secondary: 220 33% 97%;
-    --secondary-foreground: 216 60% 14%;
-    --muted: 220 20% 92%;
-    --muted-foreground: 218 20% 44%;
-    --accent: 225 73% 57%;
-    --accent-foreground: 216 60% 14%;
+    --popover-foreground: 215 60% 8%;
+    --primary: 215 65% 25%;
+    --primary-foreground: 220 20% 98%;
+    --secondary: 220 20% 96%;
+    --secondary-foreground: 215 60% 8%;
+    --muted: 220 15% 94%;
+    --muted-foreground: 218 18% 42%;
+    --accent: 42 50% 55%;
+    --accent-foreground: 215 60% 8%;
+    --success: 160 84% 39%;
+    --success-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 216 30% 88%;
-    --input: 216 30% 88%;
-    --ring: 225 73% 57%;
+    --border: 218 25% 91%;
+    --input: 218 25% 91%;
+    --ring: 42 50% 55%;
     --radius: 0.625rem;
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -47,8 +49,8 @@
   }
 
   body {
-    /* @apply bg-saferaho-cloud text-saferaho-navy antialiased; */
-    font-family: "Inter", sans-serif;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    @apply bg-[#FAFBFD] text-saferaho-navy antialiased;
   }
 
   h1,
@@ -57,34 +59,55 @@
   h4,
   h5,
   h6 {
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
+    font-family: "DM Serif Display", serif;
   }
 }
 
 @layer components {
   .font-display {
-    font-family: "Poppins", sans-serif;
-  }
-
-  .font-body {
     font-family: "Inter", sans-serif;
   }
 
+  .font-body {
+    font-family: "Plus Jakarta Sans", sans-serif;
+  }
+
   .font-label {
-    font-family: "Space Grotesk", sans-serif;
+    font-family: "Plus Jakarta Sans", sans-serif;
+  }
+
+  .font-mono {
+    font-family: "JetBrains Mono", monospace;
   }
 
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-saferaho-blue to-saferaho-navy;
   }
 
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-amber-400 via-yellow-500 to-amber-600;
+  }
+
+  .gold-accent {
+    @apply text-amber-500;
+  }
+
   .card-shadow {
-    box-shadow: 0 18px 45px rgba(11, 28, 59, 0.1);
+    box-shadow:
+      0 1px 3px rgba(10, 22, 40, 0.04),
+      0 8px 32px rgba(10, 22, 40, 0.06);
   }
 
   .card-shadow-hover {
-    box-shadow: 0 24px 55px rgba(11, 28, 59, 0.14);
+    box-shadow:
+      0 4px 12px rgba(10, 22, 40, 0.06),
+      0 16px 48px rgba(10, 22, 40, 0.1);
+  }
+
+  .card-shadow-elevated {
+    box-shadow:
+      0 8px 24px rgba(10, 22, 40, 0.08),
+      0 24px 64px rgba(10, 22, 40, 0.12);
   }
 
   .plus-grid {
@@ -92,12 +115,12 @@
   }
 
   .btn-primary {
-    @apply bg-saferaho-blue text-white font-medium px-6 py-3 rounded-xl transition-all duration-200;
+    @apply bg-saferaho-blue text-white font-semibold px-7 py-3.5 rounded-xl transition-all duration-300;
   }
 
   .btn-primary:hover {
-    @apply -translate-y-0.5 scale-[1.02];
-    box-shadow: 0 8px 25px rgba(65, 105, 225, 0.35);
+    @apply -translate-y-0.5;
+    box-shadow: 0 8px 30px rgba(30, 58, 95, 0.25);
   }
 
   .btn-primary:active {
@@ -105,12 +128,21 @@
   }
 
   .btn-secondary {
-    @apply bg-white text-saferaho-navy font-medium px-6 py-3 rounded-xl border border-saferaho-navy/10 transition-all duration-200;
+    @apply bg-white text-saferaho-navy font-semibold px-7 py-3.5 rounded-xl border border-saferaho-navy/10 transition-all duration-300;
   }
 
   .btn-secondary:hover {
     @apply -translate-y-0.5;
-    box-shadow: 0 8px 25px rgba(11, 28, 59, 0.1);
+    box-shadow: 0 8px 25px rgba(10, 22, 40, 0.08);
+  }
+
+  .btn-gold {
+    @apply bg-gradient-to-r from-amber-400 via-yellow-500 to-amber-600 text-white font-semibold px-7 py-3.5 rounded-xl transition-all duration-300;
+  }
+
+  .btn-gold:hover {
+    @apply -translate-y-0.5;
+    box-shadow: 0 8px 30px rgba(200, 164, 78, 0.35);
   }
 
   .section-padding {
@@ -119,7 +151,28 @@
 
   .card-white {
     @apply bg-white rounded-[28px] card-shadow;
-    border: 1px solid rgba(11, 28, 59, 0.08);
+    border: 1px solid rgba(10, 22, 40, 0.06);
+  }
+
+  .trust-badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1.5 bg-emerald-50 text-emerald-700 rounded-full text-xs font-semibold;
+  }
+
+  .stat-number {
+    @apply font-mono text-3xl md:text-4xl font-semibold tracking-tight;
+  }
+
+  .section-divider {
+    @apply w-12 h-0.5 bg-gradient-to-r from-amber-400 to-amber-600 rounded-full;
+  }
+
+  .eyebrow {
+    @apply font-label text-xs uppercase tracking-[0.15em] text-saferaho-gray font-semibold;
+  }
+
+  .animate-item {
+    opacity: 0;
+    transform: translateY(20px);
   }
 }
 
@@ -132,5 +185,11 @@
   }
   .animation-delay-300 {
     animation-delay: 300ms;
+  }
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+  .animation-delay-500 {
+    animation-delay: 500ms;
   }
 }

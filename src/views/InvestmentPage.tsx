@@ -1,26 +1,33 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowRight, MessageCircle, Check, TrendingUp, GraduationCap, Heart } from 'lucide-react';
-import { investmentPlans } from '@/data/investments';
-import { siteConfig } from '@/data/site';
-import { LeadForm } from '@/components/LeadForm';
+import Link from "next/link";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import {
+  ArrowRight,
+  MessageCircle,
+  Check,
+  TrendingUp,
+  GraduationCap,
+  Heart,
+} from "lucide-react";
+import { investmentPlans } from "@/data/investments";
+import { siteConfig } from "@/data/site";
+import { LeadForm } from "@/components/LeadForm";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const iconMap: Record<string, React.ElementType> = {
   retirement: TrendingUp,
-  'child-education': GraduationCap,
-  'child-marriage': Heart,
+  "child-education": GraduationCap,
+  "child-marriage": Heart,
 };
 
 const titleMap: Record<string, string> = {
-  retirement: 'Early Retirement Plans',
-  'child-education': 'Child Education Plans',
-  'child-marriage': 'Child Marriage Plans',
+  retirement: "Early Retirement Plans",
+  "child-education": "Child Education Plans",
+  "child-marriage": "Child Marriage Plans",
 };
 
 interface InvestmentPageProps {
@@ -32,7 +39,7 @@ export function InvestmentPage({ type }: InvestmentPageProps) {
   const contentRef = useRef<HTMLDivElement>(null);
   const formRef = useRef<HTMLDivElement>(null);
 
-  const plan = investmentPlans.find(p => p.id === type);
+  const plan = investmentPlans.find((p) => p.id === type);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -46,45 +53,48 @@ export function InvestmentPage({ type }: InvestmentPageProps) {
     if (!hero || !content || !form) return;
 
     const ctx = gsap.context(() => {
-      gsap.fromTo(hero.querySelector('.hero-content'),
+      gsap.fromTo(
+        hero.querySelector(".hero-content"),
         { opacity: 0, y: 40 },
         {
           opacity: 1,
           y: 0,
           duration: 0.8,
-          ease: 'power2.out',
-        }
+          ease: "power2.out",
+        },
       );
 
-      gsap.fromTo(content.querySelectorAll('.animate-item'),
+      gsap.fromTo(
+        content.querySelectorAll(".animate-item"),
         { opacity: 0, y: 30 },
         {
           opacity: 1,
           y: 0,
           duration: 0.6,
           stagger: 0.1,
-          ease: 'power2.out',
+          ease: "power2.out",
           scrollTrigger: {
             trigger: content,
-            start: 'top 75%',
-            toggleActions: 'play none none reverse',
-          }
-        }
+            start: "top 75%",
+            toggleActions: "play none none reverse",
+          },
+        },
       );
 
-      gsap.fromTo(form,
+      gsap.fromTo(
+        form,
         { opacity: 0, x: 30 },
         {
           opacity: 1,
           x: 0,
           duration: 0.6,
-          ease: 'power2.out',
+          ease: "power2.out",
           scrollTrigger: {
             trigger: form,
-            start: 'top 80%',
-            toggleActions: 'play none none reverse',
-          }
-        }
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+          },
+        },
       );
     }, hero);
 
@@ -172,7 +182,9 @@ export function InvestmentPage({ type }: InvestmentPageProps) {
                       <div className="w-6 h-6 bg-saferaho-blue/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                         <Check className="w-3.5 h-3.5 text-saferaho-blue" />
                       </div>
-                      <span className="text-base text-saferaho-navy">{feature}</span>
+                      <span className="text-base text-saferaho-navy">
+                        {feature}
+                      </span>
                     </li>
                   ))}
                 </ul>
@@ -183,9 +195,10 @@ export function InvestmentPage({ type }: InvestmentPageProps) {
                   How we help
                 </h3>
                 <p className="text-sm text-saferaho-gray leading-relaxed">
-                  At Saferaho, we guide you in choosing the right investment mix based on your goals, 
-                  risk appetite, and timeline. We help you track progress and make adjustments as needed 
-                  to stay on course.
+                  At Saferaho, we guide you in choosing the right investment mix
+                  based on your goals, risk appetite, and timeline. We help you
+                  track progress and make adjustments as needed to stay on
+                  course.
                 </p>
               </div>
             </div>
@@ -197,7 +210,8 @@ export function InvestmentPage({ type }: InvestmentPageProps) {
                   Start planning today
                 </h3>
                 <p className="text-sm text-saferaho-gray mb-6">
-                  Fill in your details and we'll get back to you within 24 hours.
+                  Fill in your details and we'll get back to you within 24
+                  hours.
                 </p>
                 <LeadForm variant="compact" showSource={true} />
               </div>
@@ -214,14 +228,19 @@ export function InvestmentPage({ type }: InvestmentPageProps) {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {investmentPlans
-              .filter(p => p.id !== plan.id)
-              .map(relatedPlan => {
+              .filter((p) => p.id !== plan.id)
+              .map((relatedPlan) => {
                 const RelatedIcon = iconMap[relatedPlan.id] || TrendingUp;
-                const relatedTitle = titleMap[relatedPlan.id] || relatedPlan.title;
+                const relatedTitle =
+                  titleMap[relatedPlan.id] || relatedPlan.title;
                 return (
                   <Link
                     key={relatedPlan.id}
-                    href={relatedPlan.id === 'retirement' ? '/early-retirement' : `/${relatedPlan.id}`}
+                    href={
+                      relatedPlan.id === "retirement"
+                        ? "/early-retirement"
+                        : `/${relatedPlan.id}`
+                    }
                     className="group bg-white rounded-[18px] p-5 card-shadow border border-saferaho-navy/5 hover:-translate-y-1 hover:card-shadow-hover transition-all duration-300"
                   >
                     <div className="w-10 h-10 bg-saferaho-blue/10 rounded-xl flex items-center justify-center mb-3 group-hover:bg-saferaho-blue/20 transition-colors">
