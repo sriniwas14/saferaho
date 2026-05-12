@@ -1,31 +1,31 @@
-import Image from "next/image"
-import { notFound } from "next/navigation"
-import { BlogContent } from "@/components/blog/BlogContent"
-import { TableOfContents } from "@/components/blog/TableOfContents"
-import { extractHeadings } from "@/lib/blog"
+import Image from "next/image";
+import { notFound } from "next/navigation";
+import { BlogContent } from "@/components/blog/BlogContent";
+import { TableOfContents } from "@/components/blog/TableOfContents";
+import { extractHeadings } from "@/lib/blog";
 import {
   getInsurancePostBySlug,
   insuranceContentSections,
   type InsuranceContentSection,
-} from "@/lib/insurance-content"
+} from "@/lib/insurance-content";
 
 export function InsuranceCategoryPostPage({
   section,
   slug,
 }: {
-  section: InsuranceContentSection
-  slug: string
+  section: InsuranceContentSection;
+  slug: string;
 }) {
-  const post = getInsurancePostBySlug(section, slug)
+  const post = getInsurancePostBySlug(section, slug);
 
   if (!post) {
-    notFound()
+    notFound();
   }
 
-  const headings = extractHeadings(post.content)
+  const headings = extractHeadings(post.content);
 
   return (
-    <main className="min-h-screen bg-white pt-24 md:pt-28">
+    <main className="min-h-screen bg-white pt-16 md:pt-24">
       <div className="relative h-[400px] w-full">
         <Image
           src={post.heroImage}
@@ -40,9 +40,7 @@ export function InsuranceCategoryPostPage({
             <span className="inline-block bg-saferaho-blue px-3 py-1 rounded-full text-sm font-medium mb-4">
               {insuranceContentSections[section].title}
             </span>
-            <h1 className="text-4xl md:text-5xl font-display font-bold mb-4">
-              {post.title}
-            </h1>
+            <h1 className="text-4xl md:text-5xl mb-4">{post.title}</h1>
             <p className="text-lg text-gray-200">
               {new Date(post.date).toLocaleDateString("en-US", {
                 year: "numeric",
@@ -54,8 +52,8 @@ export function InsuranceCategoryPostPage({
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-12">
-        <div className="flex gap-8">
+      <div className="container mx-auto px-4 py-12 max-w-6xl">
+        <div className="flex gap-8 justify-center">
           <aside className="hidden md:block w-64 flex-shrink-0">
             <div className="sticky top-32 max-h-[calc(100vh-8rem)] overflow-y-auto">
               <TableOfContents headings={headings} />
@@ -67,5 +65,5 @@ export function InsuranceCategoryPostPage({
         </div>
       </div>
     </main>
-  )
+  );
 }

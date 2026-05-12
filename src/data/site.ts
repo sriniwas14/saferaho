@@ -62,10 +62,21 @@ export const insuranceMegaMenu = [
     accent: "from-emerald-400/20 via-cyan-400/10 to-transparent",
     links: [
       {
-        label: "Cashless Health Guide",
-        href: "/health-insurance/cashless-health-insurance-guide",
+        label: "What is Health Insurance?",
+        href: "/health-insurance/what-is-health-insurance-complete-guide",
       },
-      { label: "Claims Support", href: "/claims" },
+      {
+        label: "Best Health Insurance Plans 2026",
+        href: "/health-insurance/best-health-insurance-plans-india-2026",
+      },
+      {
+        label: "Best Family Floater Plans",
+        href: "/health-insurance/best-family-floater-health-insurance-plans",
+      },
+      {
+        label: "Senior Citizen Insurance",
+        href: "/health-insurance/best-senior-citizen-health-insurance-plans",
+      },
     ],
   },
   {
@@ -75,11 +86,21 @@ export const insuranceMegaMenu = [
     accent: "from-amber-400/20 via-orange-400/10 to-transparent",
     links: [
       {
-        label: "Coverage Basics",
-        href: "/life-insurance/term-insurance-coverage-basics",
+        label: "What is Term Insurance?",
+        href: "/life-insurance/what-is-term-insurance-complete-guide",
       },
-      { label: "Life Cover Calculator", href: "/tools/life-coverage" },
-      { label: "Talk to an Advisor", href: "/contact" },
+      {
+        label: "Best Term Insurance Plans 2026",
+        href: "/life-insurance/best-term-insurance-plans-india-2026",
+      },
+      {
+        label: "Term Insurance vs Life Insurance",
+        href: "/life-insurance/term-insurance-vs-life-insurance",
+      },
+      {
+        label: "Section 80C Tax Benefits",
+        href: "/life-insurance/section-80c-tax-benefits-term-insurance",
+      },
     ],
   },
   {
@@ -89,11 +110,21 @@ export const insuranceMegaMenu = [
     accent: "from-sky-400/20 via-indigo-400/10 to-transparent",
     links: [
       {
-        label: "Own Damage vs Third Party",
-        href: "/motor-insurance/own-damage-vs-third-party",
+        label: "Best Car Insurance Plans 2026",
+        href: "/motor-insurance/best-car-insurance-plans-india-2026",
       },
-      { label: "Renew your policy", href: "/motor-insurance" },
-      { label: "Claims Support", href: "/claims" },
+      {
+        label: "Best Bike Insurance Plans 2026",
+        href: "/motor-insurance/best-bike-insurance-plans-india-2026",
+      },
+      {
+        label: "Motor Insurance Renewal Guide",
+        href: "/motor-insurance/motor-insurance-renewal-online-guide",
+      },
+      {
+        label: "Car Insurance vs Bike Insurance",
+        href: "/motor-insurance/car-insurance-vs-bike-insurance",
+      },
     ],
   },
   {
@@ -102,13 +133,26 @@ export const insuranceMegaMenu = [
     icon: "PlaneTakeoff",
     accent: "from-fuchsia-400/20 via-violet-400/10 to-transparent",
     links: [
-      { label: "Overview", href: "/travel-insurance" },
+      {
+        label: "What is Travel Insurance?",
+        href: "/travel-insurance/what-is-travel-insurance-guide",
+      },
+      {
+        label: "Best International Travel Insurance",
+        href: "/travel-insurance/best-travel-insurance-international-india",
+      },
       {
         label: "International Travel Checklist",
         href: "/travel-insurance/international-travel-cover-checklist",
       },
-      { label: "Destination Planning", href: "/travel-insurance" },
-      { label: "Get a Quote", href: "/contact" },
+      {
+        label: "Student Travel Insurance",
+        href: "/travel-insurance/student-travel-insurance-india",
+      },
+      {
+        label: "Travel vs Health Insurance",
+        href: "/travel-insurance/travel-insurance-vs-health-insurance",
+      },
     ],
   },
 ] as const;

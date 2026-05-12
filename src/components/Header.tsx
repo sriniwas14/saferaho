@@ -13,6 +13,7 @@ import {
   Wrench,
   X,
 } from "lucide-react";
+import { QuoteModal } from "@/components/QuoteModal";
 import {
   insuranceMegaMenu,
   insuranceMegaMenuTools,
@@ -258,9 +259,7 @@ export function Header() {
             <Link href="/claim" className="btn-secondary text-sm">
               Claim Now
             </Link>
-            <Link href="/contact" className="btn-primary text-sm">
-              Get a Quote
-            </Link>
+            <QuoteModal />
           </div>
 
           {/* Mobile Menu Button */}
@@ -319,12 +318,7 @@ export function Header() {
               >
                 Claim Now
               </Link>
-              <Link
-                href="/contact"
-                className="btn-primary text-sm block text-center mx-4"
-              >
-                Get a Quote
-              </Link>
+              <QuoteModal triggerClassName="btn-primary text-sm block text-center mx-4" />
             </div>
           </nav>
         </div>
