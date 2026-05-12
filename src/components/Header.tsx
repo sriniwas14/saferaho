@@ -14,6 +14,7 @@ import {
   X,
 } from "lucide-react";
 import { QuoteModal } from "@/components/QuoteModal";
+import { ClaimModal } from "@/components/ClaimModal";
 import {
   insuranceMegaMenu,
   insuranceMegaMenuTools,
@@ -256,9 +257,7 @@ export function Header() {
 
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center gap-4">
-            <Link href="/claim" className="btn-secondary text-sm">
-              Claim Now
-            </Link>
+            <ClaimModal />
             <QuoteModal />
           </div>
 
@@ -312,12 +311,7 @@ export function Header() {
               </div>
             ))}
             <div className="pt-4 border-t border-saferaho-navy/[0.06] space-y-3">
-              <Link
-                href="/claim"
-                className="btn-secondary text-sm block text-center mx-4"
-              >
-                Claim Now
-              </Link>
+              <ClaimModal triggerClassName="btn-secondary text-sm block text-center mx-4" />
               <QuoteModal triggerClassName="btn-primary text-sm block text-center mx-4" />
             </div>
           </nav>

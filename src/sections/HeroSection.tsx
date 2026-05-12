@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
+import { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   MessageCircle,
   Check,
@@ -10,115 +10,121 @@ import {
   Award,
 } from "lucide-react";
 
+const slides = [
+  {
+    id: "family",
+    image: "/images/hero-family.jpg",
+    tag: "Family Insurance",
+    title: "Secure your family's tomorrow, today",
+    description: "Comprehensive coverage for every stage of life",
+    testimonial: {
+      text: "Got my claim settled in 3 days. Saferaho made it effortless.",
+      author: "Priya Sharma, Delhi",
+      initials: "P",
+      gradient: "from-amber-400 to-amber-600",
+    },
+  },
+  {
+    id: "health",
+    image: "/images/health-insurance.jpg",
+    tag: "Health Insurance",
+    title: "Cashless treatment at 10,000+ hospitals",
+    description: "No surprise bills. No hidden deductibles.",
+    testimonial: {
+      text: "Saved ₹85,000 on my mother's surgery. Truly grateful.",
+      author: "Rajesh Mehta, Mumbai",
+      initials: "R",
+      gradient: "from-emerald-400 to-emerald-600",
+    },
+  },
+  {
+    id: "life",
+    image: "/images/life-insurance.jpg",
+    tag: "Life Insurance",
+    title: "Protect what matters most",
+    description: "Simple term plans with 100% transparency",
+    testimonial: {
+      text: "Finally found a term plan that's actually affordable.",
+      author: "Ananya Gupta, Bangalore",
+      initials: "A",
+      gradient: "from-blue-400 to-indigo-600",
+    },
+  },
+  {
+    id: "motor",
+    image: "/images/motor-insurance.jpg",
+    tag: "Motor Insurance",
+    title: "Drive with peace of mind",
+    description: "Claim assistance from start to finish",
+    testimonial: {
+      text: "Car claim processed in 48 hours. Unbelievable service.",
+      author: "Vikram Singh, Pune",
+      initials: "V",
+      gradient: "from-orange-400 to-red-600",
+    },
+  },
+  {
+    id: "travel",
+    image: "/images/travel-insurance.jpg",
+    tag: "Travel Insurance",
+    title: "Explore the world, worry-free",
+    description: "Global coverage for 200+ countries",
+    testimonial: {
+      text: "Medical evacuation covered in Europe. Lifesaver!",
+      author: "Neha Patel, Ahmedabad",
+      initials: "N",
+      gradient: "from-sky-400 to-blue-600",
+    },
+  },
+];
+
 export function HeroSection() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const cardRef = useRef<HTMLDivElement>(null);
-  const contentRef = useRef<HTMLDivElement>(null);
-  const imageRef = useRef<HTMLDivElement>(null);
-  const statsRef = useRef<HTMLDivElement>(null);
-  const trustPillsRef = useRef<HTMLDivElement>(null);
+  const [current, setCurrent] = useState(0);
+  const [paused, setPaused] = useState(false);
+
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+    if (paused) return;
+    const id = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % slides.length);
+    }, 3000);
+    return () => clearInterval(id);
+  }, [paused]);
 
-      tl.fromTo(
-        ".hero-eyebrow",
-        { opacity: 0, y: 16 },
-        { opacity: 1, y: 0, duration: 0.5 },
-      )
-        .fromTo(
-          ".hero-headline",
-          { opacity: 0, y: 24 },
-          { opacity: 1, y: 0, duration: 0.6 },
-          "-=0.25",
-        )
-        .fromTo(
-          ".hero-sub",
-          { opacity: 0, y: 20 },
-          { opacity: 1, y: 0, duration: 0.5 },
-          "-=0.3",
-        )
-        .fromTo(
-          ".hero-ctas",
-          { opacity: 0, y: 16 },
-          { opacity: 1, y: 0, duration: 0.5 },
-          "-=0.25",
-        )
-        .fromTo(
-          ".hero-pills",
-          { opacity: 0, y: 12 },
-          { opacity: 1, y: 0, duration: 0.4 },
-          "-=0.2",
-        )
-        .fromTo(
-          ".hero-stats",
-          { opacity: 0, y: 16 },
-          { opacity: 1, y: 0, duration: 0.5 },
-          "-=0.15",
-        )
-        .fromTo(
-          ".hero-image",
-          { opacity: 0, scale: 1.04 },
-          { opacity: 1, scale: 1, duration: 0.7 },
-          "-=0.5",
-        )
-        .fromTo(
-          ".hero-testimonial",
-          { opacity: 0, x: 20 },
-          { opacity: 1, x: 0, duration: 0.5 },
-          "-=0.3",
-        )
-        .fromTo(
-          ".hero-partners",
-          { opacity: 0, y: 12 },
-          { opacity: 1, y: 0, duration: 0.4 },
-          "-=0.2",
-        );
-
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
+  const slide = slides[current];
 
   return (
-    <section
-      ref={sectionRef}
-      className="relative w-full pt-24 md:pt-28 pb-12 md:pb-16 px-6 md:px-[6vw] overflow-hidden"
-    >
+    <section className="relative w-full pt-24 md:pt-28 pb-12 md:pb-16 px-6 md:px-[6vw] overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-br from-saferaho-navy/2 via-transparent to-transparent" />
         <div className="absolute top-0 right-0 w-[800px] h-[800px] -translate-y-1/2 translate-x-1/3 bg-gradient-to-bl from-saferaho-blue/4 to-transparent rounded-full blur-3xl" />
       </div>
 
-      <div ref={cardRef} className="relative max-w-[1400px] mx-auto">
-        {/* Main Hero Card */}
+      <div className="relative max-w-[1400px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 bg-white rounded-[32px] overflow-hidden card-shadow border border-saferaho-navy/[0.04]">
           {/* Content Side */}
-          <div
-            ref={contentRef}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
             className="lg:col-span-7 flex flex-col justify-center p-8 md:p-12 lg:p-16 order-2 lg:order-1"
           >
-            {/* Eyebrow */}
-            <span className="hero-eyebrow eyebrow inline-flex items-center gap-2 mb-5">
+            <span className="eyebrow inline-flex items-center gap-2 mb-5">
               <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
               Insurance & Investments
             </span>
 
-            {/* Headline */}
-            <h1 className="hero-headline font-display text-4xl md:text-5xl lg:text-[3.75rem] text-saferaho-navy leading-[1.05] tracking-tight mb-5">
+            <h1 className="font-display text-4xl md:text-5xl lg:text-[3.75rem] text-saferaho-navy leading-[1.05] tracking-tight mb-5">
               Aaj plan karo,
               <br />
               <span className="italic text-saferaho-blue">kal Safe Raho</span>
             </h1>
 
-            {/* Subheadline */}
-            <p className="hero-sub text-base md:text-lg text-saferaho-gray leading-relaxed mb-8 max-w-lg">
+            <p className="text-base md:text-lg text-saferaho-gray leading-relaxed mb-8 max-w-lg">
               Simple, honest protection for your family, health, vehicle, and
               travels. No jargon. No hidden commissions. Just clarity.
             </p>
 
-            {/* CTA Buttons */}
-            <div className="hero-ctas flex flex-col sm:flex-row gap-3 mb-6">
+            <div className="flex flex-col sm:flex-row gap-3 mb-6">
               <Link
                 href="/contact"
                 className="btn-primary inline-flex items-center justify-center gap-2 text-center"
@@ -135,11 +141,7 @@ export function HeroSection() {
               </a>
             </div>
 
-            {/* Trust Pills */}
-            <div
-              ref={trustPillsRef}
-              className="hero-pills flex flex-wrap gap-2 mb-8"
-            >
+            <div className="flex flex-wrap gap-2 mb-8">
               <div className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-emerald-50 text-emerald-700 rounded-full">
                 <Check className="w-3.5 h-3.5" />
                 <span className="text-xs font-semibold">
@@ -158,11 +160,7 @@ export function HeroSection() {
               </div>
             </div>
 
-            {/* Trust Badge */}
-            <div
-              ref={statsRef}
-              className="hero-stats pt-6"
-            >
+            <div className="pt-6">
               <div className="flex items-center gap-2">
                 <Award className="w-4 h-4 text-saferaho-gold" />
                 <div>
@@ -175,44 +173,96 @@ export function HeroSection() {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          {/* Image Side */}
+          {/* Image Side - Slideshow */}
           <div
-            ref={imageRef}
-            className="hero-image relative lg:col-span-5 order-1 lg:order-2 min-h-[320px] md:min-h-[420px] lg:min-h-full bg-gradient-to-br from-saferaho-navy/5 to-saferaho-cloud"
+            className="relative lg:col-span-5 order-1 lg:order-2 min-h-[320px] md:min-h-[420px] lg:min-h-full bg-gradient-to-br from-saferaho-navy/5 to-saferaho-cloud"
+            onMouseEnter={() => setPaused(true)}
+            onMouseLeave={() => setPaused(false)}
           >
-            <div className="relative w-full h-full">
-              <img
-                src="/images/hero.png"
-                alt="Happy family protected by Saferaho"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-saferaho-navy/15 to-transparent" />
+            <AnimatePresence mode="popLayout">
+              <motion.div
+                key={slide.id}
+                className="absolute inset-0"
+                initial={{ x: "100%" }}
+                animate={{ x: 0 }}
+                exit={{ x: "100%" }}
+                transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+              >
+                <img
+                  src={slide.image}
+                  alt={slide.tag}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-saferaho-navy/30 via-saferaho-navy/10 to-transparent" />
 
-              {/* Floating Testimonial */}
-              <div className="hero-testimonial absolute bottom-6 left-4 right-4 md:bottom-8 md:left-6 md:right-6 bg-white/95 backdrop-blur-sm rounded-2xl p-4 card-shadow border border-white/50">
-                <div className="flex items-start gap-3">
-                  <div className="w-9 h-9 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-white text-xs font-bold flex-shrink-0">
-                    P
+                <motion.div
+                  initial={{ x: -30, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ delay: 0.2, duration: 0.4, ease: "easeOut" }}
+                  className="absolute bottom-24 left-6 md:left-8 max-w-[260px]"
+                >
+                  <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs font-semibold rounded-full mb-3">
+                    {slide.tag}
+                  </span>
+                  <h3 className="text-white text-xl md:text-2xl font-display font-bold leading-tight">
+                    {slide.title}
+                  </h3>
+                  <p className="text-white/80 text-sm mt-1.5 leading-snug">
+                    {slide.description}
+                  </p>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.35, duration: 0.3 }}
+                  className="absolute bottom-4 right-4 md:bottom-6 md:right-6 w-auto max-w-[220px] md:max-w-[240px] bg-white/95 backdrop-blur-sm rounded-2xl p-3.5 card-shadow border border-white/50"
+                >
+                  <div className="flex items-start gap-2.5">
+                    <div
+                      className={`w-8 h-8 rounded-full bg-gradient-to-br ${slide.testimonial.gradient} flex items-center justify-center text-white text-xs font-bold flex-shrink-0`}
+                    >
+                      {slide.testimonial.initials}
+                    </div>
+                    <div>
+                      <p className="text-xs text-saferaho-navy leading-snug font-medium">
+                        &ldquo;{slide.testimonial.text}&rdquo;
+                      </p>
+                      <p className="text-[11px] text-saferaho-gray mt-1 font-medium">
+                        {slide.testimonial.author}
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-sm text-saferaho-navy leading-snug font-medium">
-                      "Got my claim settled in 3 days. Saferaho made it
-                      effortless."
-                    </p>
-                    <p className="text-xs text-saferaho-gray mt-1.5 font-medium">
-                      Priya Sharma, Delhi
-                    </p>
-                  </div>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
+            </AnimatePresence>
+
+            {/* Slide indicators */}
+            <div className="absolute top-4 right-4 flex gap-1.5 z-10">
+              {slides.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrent(i)}
+                  className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
+                    i === current
+                      ? "bg-white w-4"
+                      : "bg-white/40 hover:bg-white/60"
+                  }`}
+                />
+              ))}
             </div>
           </div>
         </div>
 
         {/* Partner Bar */}
-        <div className="hero-partners mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 px-4 md:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.3 }}
+          className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 px-4 md:px-8"
+        >
           <div className="flex items-center gap-2 text-saferaho-gray">
             <Award className="w-4 h-4 text-saferaho-gold" />
             <span className="text-xs font-semibold uppercase tracking-wider">
@@ -235,7 +285,7 @@ export function HeroSection() {
               </span>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

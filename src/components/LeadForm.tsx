@@ -38,6 +38,7 @@ interface LeadFormProps {
   variant?: "default" | "compact" | "inline";
   showSource?: boolean;
   showEmail?: boolean;
+  suppressSuccessView?: boolean;
   onSubmit?: (data: {
     name: string;
     phone: string;
@@ -73,6 +74,7 @@ export function LeadForm({
   variant = "default",
   showSource = true,
   showEmail = false,
+  suppressSuccessView = false,
   onSubmit,
 }: LeadFormProps) {
   const [name, setName] = useState("");
@@ -198,7 +200,7 @@ export function LeadForm({
     setIsSubmitted(true);
   };
 
-  if (isSubmitted) {
+  if (isSubmitted && !suppressSuccessView) {
     return (
       <div className="flex flex-col items-center justify-center py-10 text-center">
         <div className="w-16 h-16 bg-emerald-50 rounded-full flex items-center justify-center mb-5">
