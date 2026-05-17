@@ -2,12 +2,14 @@
 title: "What is Term Insurance? A Complete Guide for 2026"
 slug: "what-is-term-insurance-complete-guide"
 category: "Insurance Basics"
-heroImage: "/images/term-insurance-guide.jpg"
+heroImage: "/images/life_insurance/what_is_term_insurance.webp"
 date: "2026-05-11"
 excerpt: "Learn what term insurance is, how it works, who should buy it, and how to choose the right term plan in India in 2026."
 ---
 
 # What is Term Insurance? A Complete Guide
+
+![What is Term Insurance](/images/life_insurance/what_is_term_insurance.webp)
 
 Term insurance is one of the simplest financial products ever created.
 

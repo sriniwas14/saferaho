@@ -2,12 +2,14 @@
 title: "What is Health Insurance? A Complete Guide for 2026"
 slug: "what-is-health-insurance-complete-guide"
 category: "Insurance Basics"
-heroImage: "/images/health-insurance-guide.jpg"
+heroImage: "/images/health_insurance/what_is_health_insurance.webp"
 date: "2026-05-11"
 excerpt: "Learn what health insurance is, how it works, what it covers, and how to buy health insurance in India without getting trapped in confusing policy jargon."
 ---
 
 # What is Health Insurance? A Complete Guide
+
+![What is Health Insurance](/images/health_insurance/what_is_health_insurance.webp)
 
 Health insurance is basically a financial shield between you and a hospital bill capable of emotionally uppercutting your savings account.
 

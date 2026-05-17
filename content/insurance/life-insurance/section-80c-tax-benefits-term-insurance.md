@@ -2,12 +2,14 @@
 title: "Section 80C Tax Benefits on Term Insurance Explained"
 slug: "section-80c-tax-benefits-term-insurance"
 category: "Tax Saving"
-heroImage: "/images/term-insurance-tax-benefits.jpg"
+heroImage: "/images/life_insurance/section_80%2Bbenefits.webp"
 date: "2026-05-11"
 excerpt: "Learn how term insurance tax benefits work under Section 80C, how much deduction you can claim, and what tax rules apply to term insurance in India in 2026."
 ---
 
 # Section 80C Tax Benefits on Term Insurance Explained
+
+![Section 80C Benefits](/images/life_insurance/section_80%2Bbenefits.webp)
 
 Term insurance already protects your family financially.
 

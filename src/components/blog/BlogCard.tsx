@@ -13,7 +13,7 @@ export function BlogCard({
   return (
     <Link href={`${basePath}/${post.slug}`}>
       <Card className="overflow-hidden card-white hover:shadow-lg transition-shadow duration-300">
-        <div className="relative h-48 w-full">
+        <div className="relative aspect-[3/2] w-full">
           <img
             src={post.heroImage}
             alt={post.title}

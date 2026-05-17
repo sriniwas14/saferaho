@@ -2,12 +2,14 @@
 title: "Cashless Health Insurance: What Actually Matters Before You Buy"
 slug: "cashless-health-insurance-guide"
 category: "Buying Guide"
-heroImage: "/images/health-insurance.jpg"
+heroImage: "/images/health_insurance/getting_started.webp"
 date: "2026-05-07"
 excerpt: "How to evaluate network hospitals, room rent limits, waiting periods, and restoration benefits before choosing a health plan."
 ---
 
 # Cashless Health Insurance: What Actually Matters Before You Buy
+
+![Getting Started with Health Insurance](/images/health_insurance/getting_started.webp)
 
 Cashless health insurance sounds simple: choose a hospital in the insurer's network, get treated, and let the insurer settle the bill directly. In practice, the details around limits and exclusions decide whether the experience is smooth or frustrating.
 

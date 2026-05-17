@@ -81,10 +81,12 @@ const slides = [
 export function HeroSection() {
   const [current, setCurrent] = useState(0);
   const [paused, setPaused] = useState(false);
+  const [direction, setDirection] = useState(1);
 
   useEffect(() => {
     if (paused) return;
     const id = setInterval(() => {
+      setDirection(1);
       setCurrent((prev) => (prev + 1) % slides.length);
     }, 3000);
     return () => clearInterval(id);
@@ -106,14 +108,9 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="lg:col-span-7 flex flex-col justify-center p-8 md:p-12 lg:p-16 order-2 lg:order-1"
+            className="lg:col-span-5 flex flex-col justify-center p-8 md:p-12 lg:p-16 order-2 lg:order-1"
           >
-            <span className="eyebrow inline-flex items-center gap-2 mb-5">
-              <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
-              Insurance & Investments
-            </span>
-
-            <h1 className="font-display text-4xl md:text-5xl lg:text-[3.75rem] text-saferaho-navy leading-[1.05] tracking-tight mb-5">
+            <h1 className="font-display font-bold text-4xl md:text-5xl lg:text-[3.75rem] text-saferaho-navy leading-[1.05] tracking-tight mb-5">
               Aaj plan karo,
               <br />
               <span className="italic text-saferaho-blue">kal Safe Raho</span>
@@ -124,7 +121,7 @@ export function HeroSection() {
               travels. No jargon. No hidden commissions. Just clarity.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-3 mb-6">
+            <div className="flex md:flex-col sm:flex-row gap-3 mb-6">
               <Link
                 href="/contact"
                 className="btn-primary inline-flex items-center justify-center gap-2 text-center"
@@ -167,9 +164,6 @@ export function HeroSection() {
                   <div className="text-sm font-semibold text-saferaho-navy">
                     India's only 100% unbiased platform
                   </div>
-                  <div className="text-xs text-saferaho-gray mt-0.5">
-                    No ads/commisions from insurers
-                  </div>
                 </div>
               </div>
             </div>
@@ -177,17 +171,23 @@ export function HeroSection() {
 
           {/* Image Side - Slideshow */}
           <div
-            className="relative lg:col-span-5 order-1 lg:order-2 min-h-[320px] md:min-h-[420px] lg:min-h-full bg-gradient-to-br from-saferaho-navy/5 to-saferaho-cloud"
+            className="relative lg:col-span-7 order-1 lg:order-2 min-h-[320px] md:min-h-[420px] lg:min-h-full bg-gradient-to-br from-saferaho-navy/5 to-saferaho-cloud overflow-hidden"
             onMouseEnter={() => setPaused(true)}
             onMouseLeave={() => setPaused(false)}
           >
-            <AnimatePresence mode="popLayout">
+            <AnimatePresence mode="popLayout" custom={direction}>
               <motion.div
                 key={slide.id}
+                custom={direction}
                 className="absolute inset-0"
-                initial={{ x: "100%" }}
-                animate={{ x: 0 }}
-                exit={{ x: "100%" }}
+                variants={{
+                  enter: (dir: number) => ({ x: dir > 0 ? "-100%" : "100%" }),
+                  center: { x: 0 },
+                  exit: (dir: number) => ({ x: dir > 0 ? "100%" : "-100%" }),
+                }}
+                initial="enter"
+                animate="center"
+                exit="exit"
                 transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
               >
                 <img
@@ -244,7 +244,10 @@ export function HeroSection() {
               {slides.map((_, i) => (
                 <button
                   key={i}
-                  onClick={() => setCurrent(i)}
+                  onClick={() => {
+                    setDirection(i > current ? 1 : -1);
+                    setCurrent(i);
+                  }}
                   className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
                     i === current
                       ? "bg-white w-4"
@@ -257,35 +260,35 @@ export function HeroSection() {
         </div>
 
         {/* Partner Bar */}
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.3 }}
-          className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 px-4 md:px-8"
-        >
-          <div className="flex items-center gap-2 text-saferaho-gray">
-            <Award className="w-4 h-4 text-saferaho-gold" />
-            <span className="text-xs font-semibold uppercase tracking-wider">
-              Trusted partners
-            </span>
-          </div>
-          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
-            {[
-              "ICICI Prudential",
-              "HDFC Life",
-              "Max Life",
-              "Star Health",
-              "Bajaj Allianz",
-            ].map((partner) => (
-              <span
-                key={partner}
-                className="text-xs font-medium text-saferaho-gray/60 hover:text-saferaho-navy transition-colors"
-              >
-                {partner}
-              </span>
-            ))}
-          </div>
-        </motion.div>
+        {/* <motion.div */}
+        {/*   initial={{ opacity: 0, y: 12 }} */}
+        {/*   animate={{ opacity: 1, y: 0 }} */}
+        {/*   transition={{ duration: 0.4, delay: 0.3 }} */}
+        {/*   className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 px-4 md:px-8" */}
+        {/* > */}
+        {/*   <div className="flex items-center gap-2 text-saferaho-gray"> */}
+        {/*     <Award className="w-4 h-4 text-saferaho-gold" /> */}
+        {/*     <span className="text-xs font-semibold uppercase tracking-wider"> */}
+        {/*       Trusted partners */}
+        {/*     </span> */}
+        {/*   </div> */}
+        {/*   <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6"> */}
+        {/*     {[ */}
+        {/*       "ICICI Prudential", */}
+        {/*       "HDFC Life", */}
+        {/*       "Max Life", */}
+        {/*       "Star Health", */}
+        {/*       "Bajaj Allianz", */}
+        {/*     ].map((partner) => ( */}
+        {/*       <span */}
+        {/*         key={partner} */}
+        {/*         className="text-xs font-medium text-saferaho-gray/60 hover:text-saferaho-navy transition-colors" */}
+        {/*       > */}
+        {/*         {partner} */}
+        {/*       </span> */}
+        {/*     ))} */}
+        {/*   </div> */}
+        {/* </motion.div> */}
       </div>
     </section>
   );

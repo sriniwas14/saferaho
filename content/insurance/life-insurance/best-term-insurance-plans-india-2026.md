@@ -2,12 +2,14 @@
 title: "Best Term Insurance Plans in India 2026: What You Should Actually Compare"
 slug: "best-term-insurance-plans-india-2026"
 category: "Term Insurance"
-heroImage: "/images/term-insurance.jpg"
+heroImage: "/images/life_insurance/best_term_insurance_plans.webp"
 date: "2026-05-11"
 excerpt: "Looking for the best term insurance plans in India? Learn how to compare coverage, claim settlement, riders, payout options, and policy features before buying term insurance in 2026."
 ---
 
 # Best Term Insurance Plans in India 2026
+
+![Best Term Insurance Plans](/images/life_insurance/best_term_insurance_plans.webp)
 
 Term insurance is one of the few financial products that becomes incredibly important the moment you wish you never needed it.
 

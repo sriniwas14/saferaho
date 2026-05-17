@@ -2,12 +2,14 @@
 title: "Health Insurance for Senior Citizens: Best Plans for Parents in 2026"
 slug: "best-senior-citizen-health-insurance-plans"
 category: "Senior Citizen Insurance"
-heroImage: "/images/senior-citizen-health-insurance.jpg"
+heroImage: "/images/health_insurance/health_insurance_for_senior_citizens.webp"
 date: "2026-05-11"
 excerpt: "Looking for the best senior citizen health insurance in India? Learn how to choose the right health insurance for parents, compare coverage, waiting periods, co-pay clauses, and cashless benefits in 2026."
 ---
 
 # Health Insurance for Senior Citizens: Best Plans for Parents in 2026
+
+![Health Insurance for Senior Citizens](/images/health_insurance/health_insurance_for_senior_citizens.webp)
 
 Buying health insurance for yourself is logical.
 

@@ -2,12 +2,14 @@
 title: "Term Insurance vs Life Insurance: Key Differences Explained"
 slug: "term-insurance-vs-life-insurance"
 category: "Insurance Comparison"
-heroImage: "/images/term-vs-life-insurance.jpg"
+heroImage: "/images/life_insurance/term_insurance_vs_life_insurance.webp"
 date: "2026-05-11"
 excerpt: "Confused between term insurance and life insurance? Learn the key differences, benefits, costs, payouts, and which option makes more sense in India in 2026."
 ---
 
 # Term Insurance vs Life Insurance: Key Differences Explained
+
+![Term Insurance vs Life Insurance](/images/life_insurance/term_insurance_vs_life_insurance.webp)
 
 A lot of people compare term insurance and life insurance the same way people compare laptops at 2 AM after opening 47 tabs and emotionally deteriorating halfway through.
 

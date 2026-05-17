@@ -2,12 +2,14 @@
 title: "Health Insurance for Family: Best Family Floater Plans in 2026"
 slug: "best-family-floater-health-insurance-plans"
 category: "Family Health Insurance"
-heroImage: "/images/family-health-insurance.jpg"
+heroImage: "/images/health_insurance/health_insurance_for_family.webp"
 date: "2026-05-11"
 excerpt: "Looking for the best health insurance for family coverage? Learn how family floater health insurance works, what it covers, and how to choose the right plan in India for 2026."
 ---
 
 # Health Insurance for Family: Best Family Floater Plans in 2026
+
+![Health Insurance for Family](/images/health_insurance/health_insurance_for_family.webp)
 
 Medical emergencies have terrible timing.
 

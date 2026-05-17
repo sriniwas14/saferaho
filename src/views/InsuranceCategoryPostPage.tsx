@@ -26,32 +26,6 @@ export function InsuranceCategoryPostPage({
 
   return (
     <main className="min-h-screen bg-white pt-16 md:pt-24">
-      <div className="relative h-[400px] w-full">
-        <Image
-          src={post.heroImage}
-          alt={post.title}
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-saferaho-navy/60" />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center text-white px-4 max-w-4xl">
-            <span className="inline-block bg-saferaho-blue px-3 py-1 rounded-full text-sm font-medium mb-4">
-              {insuranceContentSections[section].title}
-            </span>
-            <h1 className="text-4xl md:text-5xl mb-4">{post.title}</h1>
-            <p className="text-lg text-gray-200">
-              {new Date(post.date).toLocaleDateString("en-US", {
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-              })}
-            </p>
-          </div>
-        </div>
-      </div>
-
       <div className="container mx-auto px-4 py-12 max-w-6xl">
         <div className="flex gap-8 justify-center">
           <aside className="hidden md:block w-64 flex-shrink-0">
