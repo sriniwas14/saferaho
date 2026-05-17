@@ -116,12 +116,7 @@ export function HeroSection() {
               <span className="italic text-saferaho-blue">kal Safe Raho</span>
             </h1>
 
-            <p className="text-base md:text-lg text-saferaho-gray leading-relaxed mb-8 max-w-lg">
-              Simple, honest protection for your family, health, vehicle, and
-              travels. No jargon. No hidden commissions. Just clarity.
-            </p>
-
-            <div className="flex md:flex-col sm:flex-row gap-3 mb-6">
+            <div className="flex flex-col gap-3 mb-6">
               <Link
                 href="/contact"
                 className="btn-primary inline-flex items-center justify-center gap-2 text-center"
